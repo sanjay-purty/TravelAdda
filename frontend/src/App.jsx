@@ -1,43 +1,95 @@
 import React from 'react'
-import P from './P'
-import Fa from './Fa'
-import Signup1 from './Signup1'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Signup from './Signup'
 import Login from './Login'
-import Update from './assets/Update'
-import Delete from './assets/Delete'
-import Wer from './Wer'
-import { Item } from './Component/item'
-import Navbar from './Component/Navbar.jsx';
 import Home from './Routers/Home.jsx'
 import About from './Routers/About.jsx'
-import Service from './Routers/Service.jsx'
+import Services from './Routers/Services.jsx'
 import Contact from './Routers/Contact.jsx'
-import { Route, Routes } from 'react-router-dom'
-import Reg from './Routers/Reg.jsx'
- import Log from './Routers/Log.jsx'
 import ActivitiesHome from './activities/ActivitiesHome.jsx'
+import Cart from './Routers/Cart.jsx'
+import Profile from './Routers/Profile.jsx'
+import ProtectedRoute from './routes/ProtectedRoute.jsx'
+import GuestRoute from './routes/GuestRoute.jsx'
 
 function App() {
   return (
-    <div>
-      {/* <Signup1/> */}
-      {/* <Login/> */}
-      {/* <Update/> */}
-      {/* <Delete/> */}
-    {/* <Wer/> */}
-   {/* <Reg/> */}
-   {/* <Navbar/> */}
-   <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/about" element={<About/>}/>
-    <Route path="/service" element={<Service/>}/>
-    <Route path="/contact" element={<Contact/>}/>
-    <Route path="/signup" element={<Reg/>}/>
-    <Route path="/login" element={<Log/>}/>
-    <Route path="/activities" element={<ActivitiesHome/>}/>
-   </Routes>
-     
-    </div>
+    <Routes>
+      <Route
+        path="/login"
+        element={
+          <GuestRoute>
+            <Login />
+          </GuestRoute>
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          <GuestRoute>
+            <Signup />
+          </GuestRoute>
+        }
+      />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <ProtectedRoute>
+            <About />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/services"
+        element={
+          <ProtectedRoute>
+            <Services />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/service" element={<Navigate to="/services" replace />} />
+      <Route
+        path="/cart"
+        element={
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <ProtectedRoute>
+            <Contact />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/activities"
+        element={
+          <ProtectedRoute>
+            <ActivitiesHome />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   )
 }
 

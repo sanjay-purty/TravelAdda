@@ -1,8 +1,8 @@
-import Signup1 from "../Signup1";
+import Signup from "../Signup";
 function Reg (){
     return(
         <>
-        <Signup1/>
+        <Signup/>
         </>
     )
 }
