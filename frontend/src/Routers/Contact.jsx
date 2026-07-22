@@ -2,8 +2,8 @@ import Navbar from '../Component/Navbar';
 import Hero from '../Component/Hero';
 import Footer from '../Component/Footer';
 import Wer from '../Wer';
-import ContactForm from '../Component/Contactform';
-function Contect (){
+import ContactForm from '../Component/ContactForm';
+function Contact (){
     return(
         <>
          
@@ -22,4 +22,4 @@ function Contect (){
     )
 }
 
-export default Contect ;
+export default Contact ;
