@@ -11,6 +11,9 @@ import Cart from './Routers/Cart.jsx'
 import Profile from './Routers/Profile.jsx'
 import ProtectedRoute from './routes/ProtectedRoute.jsx'
 import GuestRoute from './routes/GuestRoute.jsx'
+import AdventureActivities from './Routers/AdventureActivities.jsx'
+import TravelServicesPage from './Routers/TravelServicesPage.jsx'
+import UniqueExperiencesPage from './Routers/UniqueExperiencesPage.jsx'
 
 function App() {
   return (
@@ -52,6 +55,30 @@ function App() {
         element={
           <ProtectedRoute>
             <Services />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/services/adventure"
+        element={
+          <ProtectedRoute>
+            <AdventureActivities />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/services/travel"
+        element={
+          <ProtectedRoute>
+            <TravelServicesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/services/unique"
+        element={
+          <ProtectedRoute>
+            <UniqueExperiencesPage />
           </ProtectedRoute>
         }
       />
