@@ -120,4 +120,7 @@ app.post("/ar", (req, res) => {
   }
 });
 
-app.listen(4500);
+const PORT = process.env.PORT || 4500;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
