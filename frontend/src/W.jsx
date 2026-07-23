@@ -5,7 +5,7 @@
     const[sno,setsno]=useState(0)
     const[result,setresult]=useState(0)
     const handle= async ()=>{
-        const response=await fetch('http://localhost:4500/Add',{
+        const response=await fetch('https://traveladda-1.onrender.com/Add',{
             method: 'POST',
             headers : {'Content-Type':'application/json'},
             body:JSON.stringify({fno,sno})

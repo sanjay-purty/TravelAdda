@@ -11,7 +11,7 @@
                  alert("please Fill UP")
                  return false;
              }
-             let result = await fetch("http://localhost:4500/update",{
+             let result = await fetch("https://traveladda-1.onrender.com/update",{
                  method :"PUT",
                  body: JSON.stringify({ NewPassword, Email}),
                  headers: {"Content-Type":"application/json"},

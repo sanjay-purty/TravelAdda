@@ -46,7 +46,7 @@ export default function Login() {
 
     setIsLoading(true)
     try {
-      const res = await fetch('http://localhost:4500/login', {
+      const res = await fetch('https://traveladda-1.onrender.com/login', {
         method: 'POST',
         body: JSON.stringify({ Email: email, Password: password }),
         headers: { 'Content-Type': 'application/json' },

@@ -77,7 +77,7 @@ export default function Signup() {
 
     setIsLoading(true)
     try {
-      const res = await fetch('http://localhost:4500/register', {
+      const res = await fetch('https://traveladda-1.onrender.com/register', {
         method: 'POST',
         body: JSON.stringify({
           Name: fullName.trim(),
